@@ -28,6 +28,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <p style={{ color: 'yellow', fontSize: '24px' }}> I add some text to test HMR </p>
     </>
   );
 }
