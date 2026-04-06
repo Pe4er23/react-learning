@@ -1,8 +1,26 @@
-// src/data.js
-export const students = [
-  { id: 1, name: "Іван Петров", score: 85, isActive: true },
-  { id: 2, name: "Марія Іванова", score: 55, isActive: true },
-  { id: 3, name: "Олег Сидоров", score: 92, isActive: false },
-  { id: 4, name: "Анна Смірнова", score: 70, isActive: true },
-  { id: 5, name: "Дмитро Волков", score: 40, isActive: false }
+export const postsData = [
+  {
+    id: 1,
+    author: "User123",
+    avatar: "https://placehold.co/50",
+    content: "Це мій перший пост у новій соціальній мережі! React - це круто.",
+    date: "2 год тому",
+    likes: 5
+  },
+  {
+    id: 2,
+    author: "Admin",
+    avatar: "https://placehold.co/50",
+    content: "Сьогодні ми вивчаємо Lists &amp; Keys. Не забувайте про унікальніключі!",
+    date: "4 год тому",
+    likes: 12
+  },
+  {
+    id: 3,
+    author: "Student_KP",
+    avatar: "https://placehold.co/50",
+    content: "Лабораторна робота №2 виконується успішно.",
+    date: "1 день тому",
+    likes: 2
+  }
 ];
