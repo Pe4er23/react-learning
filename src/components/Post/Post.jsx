@@ -4,8 +4,8 @@ function Post({ id, title, content, author }) {
   const [likes, setLikes] = useState(0);
 
   const handleLike = () => {
-    // Тут ми зробимо помилку у завданні №2
-    setLikes(likes + 1);
+    // Навмисна помилка для завдання №2 (Type Coercion)
+    setLikes(likes + '1'); 
   };
 
   return (
