@@ -1,11 +1,10 @@
 import styles from './Button.module.css';
-// Використовуємо деструктуризацію пропсів
-const Button = ({ children, onClick, variant = 'primary' }) => {
+
+const Button = ({ children, variant = 'primary', ...props }) => {
     return (
-        < button
-            className={`${styles.button} ${styles[variant]}`
-            }
-            onClick={onClick}
+        <button
+            className={`${styles.button} ${styles[variant]}`}
+            {...props}
         >
             {children}
         </button>

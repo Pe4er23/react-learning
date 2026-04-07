@@ -1,14 +1,13 @@
 import styles from './Input.module.css';
 
-const Input = ({ type = 'text', placeholder, label }) => {
+const Input = ({ label, ...props }) => {
   return (
     <div className={styles.inputWrapper}>
       {/* Рендеримо label тільки якщо він переданий у пропси */}
       {label && <label className={styles.label}>{label}</label>}
       <input
-        type={type}
-        placeholder={placeholder}
         className={styles.input}
+        {...props} 
       />
     </div>
   );

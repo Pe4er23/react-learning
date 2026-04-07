@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { postsData } from '../../data';
-// import styles from './PostPage.module.css';
 const PostPage = () => {
     const { postId } = useParams();
     const navigate = useNavigate();
