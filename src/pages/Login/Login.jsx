@@ -1,19 +1,32 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-// Імпортуйте ваші Input та Button з попередніх лаб
 
 const Login = () => {
   const [email, setEmail] = useState("");
+  // 1. Створюємо стейт для відстеження процесу завантаження
+  const [isLoading, setIsLoading] = useState(false); 
+  
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  // 2. Робимо функцію асинхронною (додаємо async)
+  const handleSubmit = async (e) => { 
     e.preventDefault();
-    // Імітація перевірки даних (у Лаб №6 тут буде запит до API)
+    
     if (email) {
-      login({ email });
-      navigate("/profile", { replace: true });
+      // 3. Вмикаємо стан завантаження перед відправкою запиту
+      setIsLoading(true); 
+      
+      try {
+        await login(email); 
+        navigate("/profile", { replace: true });
+      } catch (error) {
+        console.error("Помилка під час входу:", error);
+      } finally {
+        // 4. Вимикаємо стан завантаження, коли запит завершився
+        setIsLoading(false); 
+      }
     }
   };
 
@@ -25,8 +38,13 @@ const Login = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
+        disabled={isLoading}
       />
-      <button type="submit">Увійти</button>
+      
+      {/* 5. Використовуємо isLoading для блокування кнопки та зміни тексту */}
+      <button type="submit" disabled={isLoading}>
+        {isLoading ? "Завантаження..." : "Увійти"}
+      </button>
     </form>
   );
 };
