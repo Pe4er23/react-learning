@@ -1,7 +1,7 @@
 import { Routes, Route, Link, Outlet } from 'react-router-dom';
-import ProfileOverview from './ProfileOverview';
-import ProfileSettings from './ProfileSettings';
-import styles from './Profile.module.css';
+// import ProfileOverview from './ProfileOverview';
+// import ProfileSettings from './ProfileSettings';
+// import styles from './Profile.module.css';
 const Profile = () => {
     return (
         <div className={styles.profileLayout}>
