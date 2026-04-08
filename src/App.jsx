@@ -1,14 +1,14 @@
-import Feed from "./components/Feed/Feed"; // Переконайтеся, що шлях правильний
+import { Routes, Route } from "react-router-dom";
+import NewsFeed from "./pages/NewsFeed";
+import PostDetails from "./pages/PostDetails";
 
 function App() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <h1>Дебагінг у React</h1>
-      
-      {/* Рендеримо компонент для практичної роботи */}
-      <Feed />
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<NewsFeed />} />
+      {/* Динамічний маршрут: postId буде змінною */}
+      <Route path="/post/:postId" element={<PostDetails />} />
+    </Routes>
   );
 }
 
